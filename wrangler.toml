@@ -1,0 +1,10 @@
+# :schema node_modules/wrangler/config-schema.json
+name = "shima_rss_api"
+main = "./src/index.ts"
+compatibility_date = "2023-05-18"
+node_compat = true
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "shima_db"
+database_id = "e53cccc3-e7ed-495f-b0b9-7fb10403ba7a"
