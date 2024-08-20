@@ -1,15 +1,29 @@
 {
-  "name": "elysia",
+  "name": "shima_rss_api",
   "version": "1.0.50",
+  "module": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "wrangler dev",
+    "lint": "eslint . --fix",
+    "generate": "drizzle generate",
+    "studio": "drizzle studio"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@antfu/eslint-config": "^2.26.0",
+    "@elysiajs/cors": "^1.1.0",
+    "@libsql/client": "^0.9.0",
+    "drizzle-orm": "^0.33.0",
+    "elysia": "latest",
+    "typedi": "^0.10.0"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@cloudflare/workers-types": "^4.20240815.0",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.24.0",
+    "wrangler": "^3.72.0"
   },
-  "module": "src/index.js"
+  "overrides": {
+    "@types/node": "20.8.3"
+  }
 }
