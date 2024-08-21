@@ -14,12 +14,12 @@ export default function handleUser() {
             where: (u, { eq }) => eq(u.username, username) || eq(u.email, email),
           })
           if (user)
-            throw error(409, 'Username or email already exists')
-          await db.insert(users).values({
+            throw error(409, 'Username or email already exists').error
+          return await db.insert(users).values({
             username,
             password: await md5(password),
             email,
-          })
+          }).returning()
         }, {
           body: t.Object({
             username: t.String(),
@@ -84,4 +84,3 @@ export default function handleUser() {
         })
     })
 }
-
