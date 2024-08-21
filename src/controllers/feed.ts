@@ -84,8 +84,8 @@ export default function handleFeed() {
         const db_sub = await db.insert(subscriptions).values({
           feed_id: feed.id,
           link,
-          title: sub.title!,
-          lang: sub.language as string,
+          title: sub.title!.trim(),
+          lang: sub.language as string ?? 'zh-CN',
           bookmark: sub.items[0]!.guid!,
         }).returning()
         return {
