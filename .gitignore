@@ -8,6 +8,7 @@
 # testing
 /coverage
 
+
 # next.js
 /.next/
 /out/
@@ -41,3 +42,5 @@ yarn-error.log*
 **/*.log
 package-lock.json
 **/*.bun
+
+.wrangler
