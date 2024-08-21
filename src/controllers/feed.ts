@@ -55,11 +55,6 @@ export default function handleFeed() {
           nextCheckTime: new Date(Date.now() * 1000 + 1800),
         }).returning()
         return feed[0]
-      }, {
-        body: t.Object({
-          title: t.String(),
-          private: t.Boolean(),
-        }),
       })
       .delete('/:id', async ({ user, params: { id }, error }) => {
         const db = getDB()
@@ -88,7 +83,7 @@ export default function handleFeed() {
         // TODO: check type
         const db_sub = await db.insert(subscriptions).values({
           feed_id: feed.id,
-          link: sub.link!,
+          link,
           title: sub.title!,
           lang: sub.language as string,
           bookmark: sub.items[0]!.guid!,

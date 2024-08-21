@@ -3,6 +3,7 @@ import type { DrizzleD1Database } from 'drizzle-orm/d1'
 
 export interface Env {
   DB: D1Database
+  RESEND_SECRET: string
 }
 
 export const getEnv = () => Container.get<Env>('env')

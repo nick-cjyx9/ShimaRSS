@@ -17,6 +17,7 @@
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.33.0",
     "elysia": "latest",
+    "resend": "^4.0.0",
     "rss-parser": "^3.13.0",
     "typedi": "^0.10.0"
   },

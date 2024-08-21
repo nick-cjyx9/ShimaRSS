@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import Elysia, { t } from 'elysia'
 import { md5 } from 'cf-workers-hash'
 import { getDB } from '../utils/typedi'
@@ -29,7 +28,8 @@ export default function handleUser() {
         })
         .get('/', async ({ headers: { authorization }, error }) => {
           const db = getDB()
-          const basic = authorization.split(' ')[1]
+          // TODO: typecheck would fail, I think it's a bug caused by elysia
+          const basic = authorization!.split(' ')[1]
           if (!basic)
             throw error(401, 'Unauthorized')
           const [uid, password] = atob(basic).split(':')
@@ -45,11 +45,9 @@ export default function handleUser() {
             enableEmailNotify: user.enableEmailNotify,
             createdAt: user.createdAt,
           }
-        }, {
-          headers: t.Object({
-            authorization: t.TemplateLiteral('Basic ${string}'),
-          }),
         })
+        // ,{headers: t.Object({authorization: t.String(),}),}
+        // TODO: duplicate
         .post('/login', async ({ body: { username, email, password }, error }) => {
           const db = getDB()
           if (!email && !username)

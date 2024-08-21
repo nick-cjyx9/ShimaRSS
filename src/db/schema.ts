@@ -25,15 +25,15 @@ export const feeds = sqliteTable('feed', {
 
 export const subscriptions = sqliteTable('subscriptions', {
   id: integer('id').primaryKey({ autoIncrement: true }),
-  feed_id: integer('feed_id').notNull(), //needed
+  feed_id: integer('feed_id').notNull(), // needed
   tags: text('tags', { mode: 'json' }),
   title: text('title').notNull(),
-  link: text('feed_link').notNull(), //needed
+  link: text('feed_link').notNull(), // needed
   lang: text('lang').notNull(),
   // bookmark: the guid of the latest post, the new posts after this will be sent.
   bookmark: text('bookmark').notNull(),
   // if this sub fails to get too many times, disable it.
-  error: integer('error').default(0),
+  error: integer('error').default(0).notNull(),
 })
 
 export const usersRelations = relations(users, ({ many }) => ({
