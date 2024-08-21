@@ -6,15 +6,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "wrangler dev",
     "lint": "eslint . --fix",
-    "generate": "drizzle generate",
-    "studio": "drizzle studio"
+    "generate": "drizzle-kit generate",
+    "studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@antfu/eslint-config": "^2.26.0",
     "@elysiajs/cors": "^1.1.0",
     "@libsql/client": "^0.9.0",
+    "cf-workers-hash": "^1.0.3",
+    "dotenv": "^16.4.5",
     "drizzle-orm": "^0.33.0",
     "elysia": "latest",
+    "rss-parser": "^3.13.0",
     "typedi": "^0.10.0"
   },
   "devDependencies": {

@@ -1,7 +1,17 @@
-import type { Config } from 'drizzle-kit'
+/* eslint-disable node/prefer-global/process */
+import { type Config, defineConfig } from 'drizzle-kit'
+import 'dotenv/config'
 
-export default {
-  dialect: 'sqlite',
+export default defineConfig({
   schema: './src/db/schema.ts',
   out: './src/db/migrations',
-} satisfies Config
+  dialect: 'sqlite',
+  dbCredentials: {
+    accountId: process.env.ACCOUNT_ID,
+    databaseId: process.env.DB_ID,
+    token: process.env.TOKEN,
+  },
+  driver: 'd1-http',
+  verbose: true,
+  strict: true,
+} as Config)

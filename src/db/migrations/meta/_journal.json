@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1724209836582,
+      "tag": "0000_lonely_overlord",
+      "breakpoints": true
+    }
+  ]
+}
