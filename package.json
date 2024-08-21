@@ -24,7 +24,7 @@
     "@cloudflare/workers-types": "^4.20240815.0",
     "bun-types": "latest",
     "drizzle-kit": "^0.24.0",
-    "wrangler": "^3.72.0"
+    "wrangler": "^3.72.1"
   },
   "overrides": {
     "@types/node": "20.8.3"

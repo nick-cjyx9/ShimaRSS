@@ -7,9 +7,9 @@ import { users } from '../db/schema'
 export default function handleUser() {
   return new Elysia({ aot: false })
     .group('/user', (app) => {
-      const db = getDB()
       return app
         .post('/', async ({ body: { username, password, email }, error }) => {
+          const db = getDB()
           const user = await db.query.users.findFirst({
             where: (u, { eq }) => eq(u.username, username) || eq(u.email, email),
           })
@@ -28,6 +28,7 @@ export default function handleUser() {
           }),
         })
         .get('/', async ({ headers: { authorization }, error }) => {
+          const db = getDB()
           const basic = authorization.split(' ')[1]
           if (!basic)
             throw error(401, 'Unauthorized')
@@ -50,6 +51,7 @@ export default function handleUser() {
           }),
         })
         .post('/login', async ({ body: { username, email, password }, error }) => {
+          const db = getDB()
           if (!email && !username)
             throw error(400, 'Username or email is required')
           const hashed = await md5(password)
@@ -82,3 +84,4 @@ export default function handleUser() {
         })
     })
 }
+
