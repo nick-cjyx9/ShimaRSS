@@ -6,4 +6,6 @@
 
 然后就是集成 Cloudflare AI。
 
+parser: https://github.com/nick-cjyx9/parse_rss
+
 因为仓库主开学的原因，停更一年。有人 PR 还是欢迎，我会在闲下来的时候帮你 review。
