@@ -1,0 +1,14 @@
+PRAGMA defer_foreign_keys=TRUE;
+INSERT INTO __drizzle_migrations VALUES(NULL,'9bf4388878d3c062e3a9e6fe8d1814776efe47d8501863850e3abda30f8444cd',1724209836582);
+INSERT INTO feed VALUES(1,1,1,1,"2024-08-21 13:54:36",1724248476678,1800,NULL);
+INSERT INTO subscriptions VALUES(1,1,NULL,replace('\n的个人收藏\n','\n',char(10)),'https://bgm.tv/feed/user/cjyx9/interests','zh-cn','http://bgm.tv/subject/235130',0);
+INSERT INTO subscriptions VALUES(2,1,NULL,'ouuan''s blog','https://ouuan.moe/feed.xml','zh-CN','https://ouuan.moe/post/2024/07/outlier',0);
+INSERT INTO subscriptions VALUES(3,1,NULL,' 太隐 ','https://wangyurui.com/feed.xml','zh-CN','https://wangyurui.com/posts/shui-lian-6818149e',0);
+INSERT INTO subscriptions VALUES(4,1,NULL,'SaroProck ⚡','https://www.saroprock.com/rss.xml','zh-CN','https://www.saroprock.com/blog/2024-1-2/',0);
+INSERT INTO subscriptions VALUES(5,1,NULL,'Anthony Fu','https://antfu.me/feed.xml','zh-CN','https://antfu.me/posts/sponsorship-forwarding',0);
+INSERT INTO subscriptions VALUES(6,1,NULL,'Airing 的博客','https://blog.ursb.me/feed.xml','zh-CN','https://blog.ursb.me/posts/service/',0);
+INSERT INTO subscriptions VALUES(7,1,NULL,'静かな森','https://innei.in/feed','zh-CN','https://innei.in/notes/176',0);
+INSERT INTO users VALUES(1,'nick','35e1f65d64baa90078e7e0bb04a85f39',"2024-08-21 13:54:11",'i@nickchen.top',1);
+INSERT INTO sqlite_sequence VALUES('users',1);
+INSERT INTO sqlite_sequence VALUES('feed',1);
+INSERT INTO sqlite_sequence VALUES('subscriptions',7);

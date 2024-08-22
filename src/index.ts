@@ -17,7 +17,7 @@ export default {
       .handle(request)
     return resp
   },
-  async scheduled(env: Env) {
+  async scheduled(_event: any, env: Env, _ctx: any) {
     const db = drizzle(env.DB, { schema })
     await onUpdate(db, env)
   },
